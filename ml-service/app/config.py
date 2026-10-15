@@ -1,0 +1,16 @@
+SUSPICIOUS_PHRASES = [
+    "urgent",
+    "free money",
+    "click here",
+    "verify your account",
+    "act now",
+    "winner",
+    "limited offer",
+    "claim your prize",
+    "congratulations",
+    "special promotion",
+    "account suspended",
+    "call now",
+    "risk free",
+    "exclusive deal",
+]

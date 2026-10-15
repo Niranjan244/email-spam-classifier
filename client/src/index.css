@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-soft: #eff6ff;
+  --color-danger: #dc2626;
+  --color-danger-soft: #fef2f2;
+  --color-success: #16a34a;
+  --color-success-soft: #f0fdf4;
+  --color-warning: #d97706;
+  --color-warning-soft: #fffbeb;
+
+  /* Auth Background Tokens */
+  --auth-bg-base-start: #f8fafc;
+  --auth-bg-base-end: #eef2ff;
+  --auth-glow-top-left: rgba(59, 130, 246, 0.28);
+  --auth-glow-top-right: rgba(99, 102, 241, 0.22);
+  --auth-glow-bottom: rgba(56, 189, 248, 0.16);
+  --auth-grid-color: rgba(226, 232, 240, 0.6);
+  --auth-top-accent: rgba(37, 99, 235, 0.6);
+  --auth-vignette: rgba(15, 23, 42, 0.04);
+}
+
+.dark {
+  --color-background: #0b1120;
+  --color-surface: #111827;
+  --color-surface-muted: #1a2333;
+  --color-border: #243044;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+  --color-primary-soft: rgba(59, 130, 246, 0.12);
+  --color-danger: #f87171;
+  --color-danger-soft: rgba(248, 113, 113, 0.12);
+  --color-success: #4ade80;
+  --color-success-soft: rgba(74, 222, 128, 0.12);
+  --color-warning: #fbbf24;
+  --color-warning-soft: rgba(251, 191, 36, 0.12);
+
+  /* Auth Background Tokens */
+  --auth-bg-base-start: #0b1120;
+  --auth-bg-base-end: #0a0f1e;
+  --auth-glow-top-left: rgba(59, 130, 246, 0.35);
+  --auth-glow-top-right: rgba(99, 102, 241, 0.3);
+  --auth-glow-bottom: rgba(56, 189, 248, 0.2);
+  --auth-grid-color: rgba(36, 48, 68, 0.35);
+  --auth-top-accent: rgba(59, 130, 246, 0.6);
+  --auth-vignette: rgba(0, 0, 0, 0.3);
+}
+
+.auth-card-shadow {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 20px 48px rgba(37, 99, 235, 0.12);
+}
+
+.dark .auth-card-shadow {
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.25),
+    0 20px 48px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(59, 130, 246, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Sleek custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* High-contrast brand selection */
+::selection {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+/* Ensure browser autofill harmonizes with active theme surface and text */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-text);
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-surface) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Accessible placeholder contrast across both themes */
+::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.85;
+}

@@ -1,0 +1,6 @@
+node_modules
+.env
+.local_*.json
+sample_test.csv
+test_dataset.csv
+uploads/
