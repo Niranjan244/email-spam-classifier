@@ -250,15 +250,13 @@ const AdminModelsPage = () => {
         </p>
       </div>
 
-      {/* Two-Step Card: Step 1 (Train) & Step 2 (Results) */}
+      {/* Model Training & Evaluation */}
       <Card>
         <Card.Header className="border-b border-border pb-4">
           <div className="flex items-center justify-between">
             <div>
               <Card.Title>
-                {step === 1
-                  ? 'Step 1: Configure & Train Model'
-                  : 'Step 2: Training & Evaluation Results'}
+                {step === 1 ? 'Configure & Train Model' : 'Training & Evaluation Results'}
               </Card.Title>
               <Card.Description>
                 {step === 1
@@ -267,7 +265,7 @@ const AdminModelsPage = () => {
               </Card.Description>
             </div>
 
-            {/* Step navigation tabs */}
+            {/* View switcher */}
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -330,7 +328,7 @@ const AdminModelsPage = () => {
             </div>
           )}
 
-          {/* STEP 1: Configuration Form */}
+          {/* Training Form */}
           {step === 1 && (
             <form onSubmit={handleTrain} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -427,7 +425,7 @@ const AdminModelsPage = () => {
             </form>
           )}
 
-          {/* STEP 2: Evaluation Results */}
+          {/* Evaluation Results */}
           {step === 2 && latestTrainedResult && (
             <div className="space-y-6">
               {/* Summary Banner */}
